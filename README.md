@@ -1,6 +1,6 @@
 # Prometheus IPMI Exporter
 
-This is an example to use [IPMI Exporter](https://github.com/soundcloud/ipmi_exporter).
+This is an example of using Prometheus [IPMI Exporter](https://github.com/soundcloud/ipmi_exporter).
 
 ## Docker compose file
 
@@ -9,7 +9,7 @@ version: '3.4'
 
 services:
   ipmi-exporter:
-    image: darren00/ipmi_exporter:v1.2.0
+    image: darren00/ipmi-exporter
     ports:
       - "9290:9290"
     volumes:

@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   ipmi-exporter:
-    image: darren00/ipmi_exporter:v1.2.0
+    image: darren00/ipmi-exporter
     ports:
       - "9290:9290"
     volumes:
