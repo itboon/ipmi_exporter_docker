@@ -8,7 +8,7 @@ ENV dlSRC="https://github.com/soundcloud/ipmi_exporter/releases/download/${versi
 RUN set -ex; \
     wget -O /tmp/exporter.tar.gz ${dlSRC}; \
     tar xf /tmp/exporter.tar.gz -C /tmp; \
-    mv /tmp/ipmi_exporter*/ipmi_exporter /bin/ipmi_exporter
+    cp /tmp/ipmi_exporter*/ipmi_exporter /bin/ipmi_exporter
 
 # Container image
 FROM debian:buster-slim
