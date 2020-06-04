@@ -1,0 +1,22 @@
+global:
+  scrape_timeout: 3s
+
+scrape_configs:
+  - job_name: ipmi
+    params:
+      module: ["default"]
+    scrape_interval: 1m
+    metrics_path: /ipmi
+    scheme: http
+    static_config:
+      targets:
+        # Remote IPMI hosts.
+        - 10.2.0.10
+        - 10.2.0.11
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: ipmi-exporter:9290

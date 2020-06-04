@@ -1,0 +1,21 @@
+modules:
+  default:
+    # These settings are used if no module is specified, the
+    # specified module doesn't exist, or of course if
+    # module=default is specified.
+    user: "root"
+    pass: "YourPassword"
+    # The below settings correspond to driver-type, privilege-level, and
+    # session-timeout respectively, see `man 5 freeipmi.conf` (and e.g.
+    # `man 8 ipmi-sensors` for a list of driver types).
+    driver: "LAN_2_0"
+    privilege: "user"
+    # The session timeout is in milliseconds. Note that a scrape can take up
+    # to (session-timeout * #-of-collectors) milliseconds, so set the scrape
+    # timeout in Prometheus accordingly.
+    timeout: 10000
+    # Available collectors are bmc, ipmi, chassis, dcmi, and sel
+    # If _not_ specified, bmc, ipmi, chassis, and dcmi are used
+    collectors:
+    - ipmi
+    - sel
