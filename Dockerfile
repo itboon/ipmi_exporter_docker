@@ -13,12 +13,12 @@ RUN set -ex; \
 # Container image
 FROM debian:buster-slim
 
+COPY --from=builder /bin/ipmi_exporter /bin/ipmi_exporter
+
 RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends freeipmi-tools; \
     rm -rf /var/lib/apt/lists/*
-
-COPY --from=builder /bin/ipmi_exporter /bin/ipmi_exporter
 
 EXPOSE 9290
 ENTRYPOINT ["/bin/ipmi_exporter"]
