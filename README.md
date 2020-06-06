@@ -2,7 +2,9 @@
 
 This is an example of using Prometheus [IPMI Exporter](https://github.com/soundcloud/ipmi_exporter).
 
-## Docker compose file
+## Docker Compose configuration
+
+`docker-compose.yml`:
 
 ``` yaml
 version: '3.4'
@@ -17,6 +19,8 @@ services:
 ```
 
 ## IPMI exporter configuration
+
+`ipmi_remote.yml`:
 
 ``` yaml
 modules:
